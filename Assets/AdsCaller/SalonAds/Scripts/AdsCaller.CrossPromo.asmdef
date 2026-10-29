@@ -1,0 +1,11 @@
+{
+  "name": "AdsCaller.CrossPromo",
+  "rootNamespace": "AdsCaller",
+  "references": [
+    "AdsCaller.Core",
+    "UnityEngine.UI",
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ],
+  "autoReferenced": true
+}

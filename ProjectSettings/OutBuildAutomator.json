@@ -1,0 +1,33 @@
+{
+    "schemaVersion": 1,
+    "defaultPreset": "Release",
+    "presets": [
+        {
+            "name": "Local Test",
+            "development": true,
+            "appBundle": false,
+            "incrementVersionCode": false,
+            "overrideMachineOutput": false,
+            "outputFolder": "Builds",
+            "namingTemplate": "{package}_v{version}_{code}"
+        },
+        {
+            "name": "QA",
+            "development": true,
+            "appBundle": false,
+            "incrementVersionCode": true,
+            "overrideMachineOutput": false,
+            "outputFolder": "Builds",
+            "namingTemplate": "{package}_v{version}_{code}"
+        },
+        {
+            "name": "Release",
+            "development": false,
+            "appBundle": false,
+            "incrementVersionCode": false,
+            "overrideMachineOutput": false,
+            "outputFolder": "Builds",
+            "namingTemplate": "{package}_v{version}_{code}"
+        }
+    ]
+}

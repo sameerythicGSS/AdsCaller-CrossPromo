@@ -1,0 +1,15 @@
+ADS CALLER CROSSPROMO v1.8
+
+- Core API version 2 compatibility
+- Readiness-aware Network/CrossPromo fallback
+- Shared fullscreen lock
+- Structured interstitial and rewarded outcomes
+- Clear catalog, UI, creative, provider, and no-fill diagnostics
+- Combined defaults: CrossPromo banners/MREC; Network interstitial/rewarded
+- Parameterless AdsMediator.Instance.ShowInterstitial() remains supported
+- Updated integration guide, developer guide, architecture guide, and changelog
+
+IMPORTANT:
+Use Main v1.8 and CrossPromo v1.8 from the same release.
+Install Addressables and Newtonsoft JSON before importing a legacy CrossPromo unitypackage.
+

@@ -1,0 +1,512 @@
+{
+  "assets": [
+    {
+      "path": "Assets/AdsCaller/AdsCaller-UPM-Guide.md",
+      "guid": "da1e619bb7b75673a9237b0120a63599"
+    },
+    {
+      "path": "Assets/AdsCaller/GSS-UPM-Guide.md",
+      "guid": "da1e619bb7b75673a9237b0120a63599"
+    },
+    {
+      "path": "Assets/AdsCaller/Bootstrap",
+      "guid": "1c13d5a12863e0e4f9ae2d487adceebe"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor",
+      "guid": "c842e12ed95d4ae9ab02a0bd3bd679c1"
+    },
+    {
+      "path": "Assets/AdsCaller/Package-Composition.md",
+      "guid": "74d84b7d11674855b4976bf4e0daf2ab"
+    },
+    {
+      "path": "Assets/AdsCaller/Prefabs",
+      "guid": "8551995f18ac44e40b40439f4457f21f"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds",
+      "guid": "74d18484ee3bafe46b01686488a04405"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts",
+      "guid": "0d3b72b72e1761b42b7892bc7509883d"
+    },
+    {
+      "path": "Assets/AdsCaller/Tests",
+      "guid": "faffd17dac0af6f4b936967764635a41"
+    },
+    {
+      "path": "Assets/AdsCaller/Bootstrap/CrossPromo",
+      "guid": "e3a7b907ec3a2114886c967880e1248b"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/Branding",
+      "guid": "2c4ce9f387ed46d0be379db7c7ad2d84"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/ProjectReporter",
+      "guid": "a94b4c215d5d4bd09b660f71683d1c51"
+    },
+    {
+      "path": "Assets/AdsCaller/Prefabs/AdsMediator.prefab",
+      "guid": "7b34bc23d9aa1524b9c40a1cc3602f05"
+    },
+    {
+      "path": "Assets/AdsCaller/Prefabs/FbAnalytics.prefab",
+      "guid": "32794b83b3609a448ab284ffc72038ff"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/AdsConfiguration.asset",
+      "guid": "812a3c1bc6bb0dc4cbfaf7079e3801ed"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database",
+      "guid": "2ec9b3290a7cb0940ac96188ea0ea3d4"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Images",
+      "guid": "b67ce68d41f18434a8b4fb2e02c47d87"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs",
+      "guid": "c81c937756dcdee48b7282a9f88217c3"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts",
+      "guid": "f7c652c93792f4b4e97c072913384ee7"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Tests",
+      "guid": "dc09530be7488d448a3430045559e01e"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Demo",
+      "guid": "c9da313f0bfbfb24497a24934f3d5fae"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs",
+      "guid": "790846b0008ad9640b8c7cc65c91c7b1"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/AdsCaller.Core.asmdef",
+      "guid": "95f5fcf23c69574e852ff6c7837d6f82"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/GSS.AdsCaller.Core.asmdef",
+      "guid": "95f5fcf23c69574e852ff6c7837d6f82"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Core",
+      "guid": "2f0a909ea14bed44c8241f4e384abbc1"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Data",
+      "guid": "1d98ba64aae346840888100a3be3c2a6"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor",
+      "guid": "55c521706cbae3e4baeca4fbfcbe1e40"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Firebase",
+      "guid": "c4d494b3229ba8246af6821abec8660b"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/General",
+      "guid": "3b7946d248efe9449a0358b6f3c7c231"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Others",
+      "guid": "edc4ca29ff15dad4c998a0e95dfdfd45"
+    },
+    {
+      "path": "Assets/AdsCaller/Tests/Editor",
+      "guid": "94d268ff6f7c2f5438bb43c8bf9d073a"
+    },
+    {
+      "path": "Assets/AdsCaller/Bootstrap/CrossPromo/Ads Caller CrossPromo.prefab",
+      "guid": "5ae64ac1dd414694e9228160563b69a9"
+    },
+    {
+      "path": "Assets/AdsCaller/Bootstrap/CrossPromo/GSS Ads Caller CrossPromo.prefab",
+      "guid": "5ae64ac1dd414694e9228160563b69a9"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/Branding/AdsCaller.png",
+      "guid": "f2eae5513a0849cf8b8b135309f04290"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/Branding/AdsCallerCrossPromo.png",
+      "guid": "76918759dc314c6d949147a188a67b5e"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/ProjectReporter/SamProjectReporter.cs",
+      "guid": "e3ba76f7cfb9422a866c8fd897bb9462"
+    },
+    {
+      "path": "Assets/AdsCaller/Editor/ProjectReporter/SamProjectReporter.Editor.asmdef",
+      "guid": "c730462490864f8d8b7b043e1a7847ad"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games",
+      "guid": "9cc4dac724cc45344b66a7b5d3713406"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/LocalGameCatalog.asset",
+      "guid": "18136350143577749890cc7a322126fc"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Images/Inter_VideoRender.renderTexture",
+      "guid": "69a6281e9da0b0648b8b1f338a5fb6e5"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Images/UI",
+      "guid": "edbc3a7fcc4c9fd4db8d83dbd3d1878c"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies",
+      "guid": "fdadaffd77f69bc49954eea84fcaf2a9"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdsCallerSalon.prefab",
+      "guid": "3dad7a39a2faa384e96e16229c939612"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/CatalogLoader.prefab",
+      "guid": "e6f6ec6c9e295b74b8e22d767edaa4e2"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdsCaller.CrossPromo.asmdef",
+      "guid": "a66fe5d5419f554d8850f77835ef6c01"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/GSS.AdsCaller.CrossPromo.asmdef",
+      "guid": "a66fe5d5419f554d8850f77835ef6c01"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes",
+      "guid": "22144fa200a9ef2418492692507bda64"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Configuration",
+      "guid": "eb272b690f009b64fad37d6469e75905"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Core",
+      "guid": "0f2ab6da34e39364c9b7ba51ecb7976f"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Database",
+      "guid": "924802a20a08a1e469a751d473f86491"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Editor",
+      "guid": "a7d04de9edf3a504d91ccc097eb733ec"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Others",
+      "guid": "1d1d8c782b2325a43bfc662ad132f93d"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Remote",
+      "guid": "e4a994b2a8a9b584ebf6f796744eb027"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Tests/Editor",
+      "guid": "ddca8cc38756b054fb321b98092a3fee"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Demo/Scenes",
+      "guid": "57157bd359ece2649ac65cb0953aff77"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Demo/Scripts",
+      "guid": "248036a09f76d72478e1f02a15932953"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs/CHANGELOG.md",
+      "guid": "99acf9ed1ef14af38b31f645ca8d9812"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs/Developer-Guide.md",
+      "guid": "3b2f9a76c38d4de5aa117b345c90d811"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs/How_It_Works.md",
+      "guid": "6e71686940c35764a93984ac7f2ea186"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs/Integration-Guide-CrossPromo-AdsCaller.md",
+      "guid": "d2610a2b9cb645c4383d71c3a4e3f142"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Docs/WhatsNew.txt",
+      "guid": "b0e908fdde7eb5e4ab41a63f5fc5fecf"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro",
+      "guid": "c7eea025d12d716469da0d219f7fb73b"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/B 1.png",
+      "guid": "f563b9bc37270714daf38fe2a54b2403"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/B 2.png",
+      "guid": "c49829a404012a347bfdc3c34d05a3b5"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/BB 1.png",
+      "guid": "9d68577616a707940a8fdfeae4b0f684"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/BB 2.png",
+      "guid": "f147d9ca0c059b74690a0bde1c61fd63"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/Icon.png",
+      "guid": "322791be712344446a1be56e9e78cac4"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/Inter 1.png",
+      "guid": "fcb2a7605ea1d244a8496ba1667f4667"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Database/Games/Food Stand ProFood Stand Pro/Inter 2.png",
+      "guid": "e5738c923d2f9a94987ac81bf1dcd4e5"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Images/UI/circle.png",
+      "guid": "3e584a8db93295544ae45c5aeef5abd0"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Images/UI/cross.png",
+      "guid": "a929513ae8218f448b3c65808e748b73"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/Banner.prefab",
+      "guid": "2d2c3c283f78a0e43bbb6ca170d40674"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/Interstitial.prefab",
+      "guid": "78eb89ea6d6ac444e8d439e1c321c6e6"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/Interstitial_landscape.prefab",
+      "guid": "4e12013eff1e6504ca39b61765df95e8"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/LargeBanner.prefab",
+      "guid": "955f21ac495693343835fc20f1853e81"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/PopAd.prefab",
+      "guid": "91f95585a50802047a029881c564e313"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/Rewarded.prefab",
+      "guid": "0470c87d86da1c847bb2c045cbe2d0ce"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Prefabs/AdBodies/Rewarded_landscape.prefab",
+      "guid": "f9f33d7a546aa5242aa1a4f2a6375c84"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonAdCloseControl.cs",
+      "guid": "60a2b43c3aec410fbf4eae032882c0e7"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonAdTimerReel.cs",
+      "guid": "dedf579816684086a5c0b98ef8910f7c"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonBannerAd.cs",
+      "guid": "39f853a9095c797479289cb071ba8979"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonInterstitialAd.cs",
+      "guid": "fe1fe41fcddc1f846898fa4ee06882ac"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonLargeBannerAd.cs",
+      "guid": "0ba262681914ea44ea64d68109e590b8"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonPopAd.cs",
+      "guid": "0dee5f27642192b40820428c1da22f97"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/AdTypes/SalonRewardedAd.cs",
+      "guid": "a4e12ee820b3ffa4e8eacad564580508"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Configuration/AdsConfiguration.cs",
+      "guid": "a1f5bc2c0c6701843bd3b7d3922d6153"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Data/AdsConfiguration.cs",
+      "guid": "a1f5bc2c0c6701843bd3b7d3922d6153"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Configuration/BannerAnimator.cs",
+      "guid": "86fa86fd012d0634f9745ad749d59884"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Others/BannerAnimator.cs",
+      "guid": "86fa86fd012d0634f9745ad749d59884"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Core/AdsCallerSalon.cs",
+      "guid": "1a15da5c582a21d4d961c3bcc43c72f6"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Core/AdUIFactory.cs",
+      "guid": "d2f02a7b97765994eaeae8eca3e79978"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Core/CatalogLoader.cs",
+      "guid": "4c4e0dabe7d3e4e4d95cff00aa8d37c0"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Core/VideoCacher.cs",
+      "guid": "89d18e3e39a7a2d40b5a8ac7afceb44c"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Database/GameAdEntry.cs",
+      "guid": "6bde4b10c5d93ac4aac5552e91fe9943"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Database/GameCatalog.cs",
+      "guid": "a55f33764c2ce7948840652233acdd30"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Editor/AdsCaller.CrossPromo.Editor.asmdef",
+      "guid": "ba879a99f73b50d2b6bc83a017e2d605"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Editor/GSS.AdsCaller.CrossPromo.Editor.asmdef",
+      "guid": "ba879a99f73b50d2b6bc83a017e2d605"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Editor/AdsCallerCrossPromoSetup.cs",
+      "guid": "faa787f9c0545c13bd8cd2054b785223"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Editor/GSSCrossPromoSetup.cs",
+      "guid": "faa787f9c0545c13bd8cd2054b785223"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Others/NativeUIPunchScaler.cs",
+      "guid": "6630208dc65ffa64ea11bb733b39991f"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Others/PanelAdTreatmentSalon.cs",
+      "guid": "c24293659e7df2b48b9db315b892254d"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Others/RenderTexture_Switch.cs",
+      "guid": "61798b0ed1a00d8418708de1732b2494"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Scripts/Remote/SpriteDownloader.cs",
+      "guid": "ce51529062d77cc44bc8c0dd5c050ddc"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/Tests/Editor/SalonFullscreenAdRegression.cs",
+      "guid": "e5354616d035bb441bd41fb19eab77c8"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Demo/Scenes/AdsCaller_Salon_SampleScene.unity",
+      "guid": "7b5cd057ce31236439897d0f87d19be2"
+    },
+    {
+      "path": "Assets/AdsCaller/SalonAds/_Demo/Scripts/AdsCaller_Salon_Demo.cs",
+      "guid": "410b449410fc87f4da51c6ca30fe7813"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Core/AdsAnalytics.cs",
+      "guid": "c1dcc169453546d3a9634c89a29d9153"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Core/AdsMediator.cs",
+      "guid": "255ef5883e78a18429db513313366f23"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Core/AdsProviderRegistry.cs",
+      "guid": "a84b1b46b6b24aa0acb8ee0e50fbef31"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Core/IOutAdsProvider.cs",
+      "guid": "e4345a27886277348a626e305198f287"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Data/EnumsJar_Salon.cs",
+      "guid": "52d90f2acdc37874ca869e4bf4be8a44"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCaller.Editor.asmdef",
+      "guid": "4de69caeae4d50769ad54bb78bac72e5"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/GSS.AdsCaller.Editor.asmdef",
+      "guid": "4de69caeae4d50769ad54bb78bac72e5"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCallerAssets.cs",
+      "guid": "fb2bed2654c05883a4c7c5c6bfec8ae6"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/GSSAdsAssets.cs",
+      "guid": "fb2bed2654c05883a4c7c5c6bfec8ae6"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCallerBootstrap.cs",
+      "guid": "935d8cd0a08154a5879f741b78d30b98"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/GSSAdsBootstrap.cs",
+      "guid": "935d8cd0a08154a5879f741b78d30b98"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCallerImportGuard.cs",
+      "guid": "c45f348f156151f09965e2e76f139caf"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCallerPackageExporter.cs",
+      "guid": "bb65706486fd47b2a2632157b1a7b40f"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Editor/AdsCallerSetup.cs",
+      "guid": "e8e01d7599597fb4eb5b3e93383ec1b7"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/Firebase/FbAnalytics.cs",
+      "guid": "2b6b222b4b96997428ed1c43d3a8429f"
+    },
+    {
+      "path": "Assets/AdsCaller/Scripts/General/Logger.cs",
+      "guid": "4c1a2a4dedeebb849b5ba31bd83d9245"
+    },
+    {
+      "path": "Assets/AdsCaller/Tests/Editor/PackageValidation.cs",
+      "guid": "a37be1c931d702542b74a508b6f7708d"
+    },
+    {
+      "path": "Assets/MMPHandler/AdsCaller.Core.asmref",
+      "guid": "9ff24e5b8dda515386ae7858654392e3"
+    },
+    {
+      "path": "Assets/MMPHandler/GSS.AdsCaller.Core.asmref",
+      "guid": "9ff24e5b8dda515386ae7858654392e3"
+    },
+    {
+      "path": "Assets/MMPHandler/SEHandler.cs",
+      "guid": "11964dacc72c84998b3c763e9316f739"
+    },
+    {
+      "path": "Assets/MMPHandler/SEHandler.prefab",
+      "guid": "5d8c176d7aa824105ac1dc50e8b1605e"
+    }
+  ]
+}

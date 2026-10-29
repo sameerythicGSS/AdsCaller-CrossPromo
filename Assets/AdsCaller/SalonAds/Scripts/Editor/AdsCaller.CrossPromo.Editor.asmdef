@@ -1,0 +1,13 @@
+{
+  "name": "AdsCaller.CrossPromo.Editor",
+  "rootNamespace": "AdsCaller",
+  "references": [
+    "AdsCaller.CrossPromo",
+    "AdsCaller.Editor",
+    "Unity.Addressables.Editor"
+  ],
+  "autoReferenced": true,
+  "includePlatforms": [
+    "Editor"
+  ]
+}

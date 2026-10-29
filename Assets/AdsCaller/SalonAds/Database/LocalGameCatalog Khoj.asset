@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55f33764c2ce7948840652233acdd30, type: 3}
+  m_Name: LocalGameCatalog Khoj
+  m_EditorClassIdentifier: 
+  gameEntries:
+  - gameName: FoodTruckEmpire
+    gamePackageName: com.sharkfingames.food.stand
+    asin: B0GC5TZBMJ
+    gameImageSequence: 0
+    gameBannerImages:
+    - {fileID: 21300000, guid: f563b9bc37270714daf38fe2a54b2403, type: 3}
+    - {fileID: 21300000, guid: c49829a404012a347bfdc3c34d05a3b5, type: 3}
+    gameInterstitialImages:
+    - {fileID: 21300000, guid: a5f342c1be3261842859348b21671e50, type: 3}
+    gameInterstitialVideos: []
+    gameRewardedImages:
+    - {fileID: 21300000, guid: a5f342c1be3261842859348b21671e50, type: 3}
+    gameRewardedVideos: []
+    gameLargeBannerImages:
+    - {fileID: 21300000, guid: 9d68577616a707940a8fdfeae4b0f684, type: 3}
+    - {fileID: 21300000, guid: f147d9ca0c059b74690a0bde1c61fd63, type: 3}
+    gamePopAdImages:
+    - {fileID: 21300000, guid: 322791be712344446a1be56e9e78cac4, type: 3}
+    remoteInterstitialVideoURLs: []
+    remoteRewardedVideoURLs: []

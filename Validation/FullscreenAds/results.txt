@@ -1,0 +1,17 @@
+PASS: Interstitial  arrow=False
+PASS: Rewarded  arrow=False
+PASS: Interstitial  arrow=True
+PASS: Rewarded  arrow=True
+PASS: Interstitial _landscape arrow=False
+PASS: Rewarded _landscape arrow=False
+PASS: Interstitial _landscape arrow=True
+PASS: Rewarded _landscape arrow=True
+PASS: Configuration ownership, independent toggles, cached UI reuse, snapshot and legacy defaults 
+PASS: Configuration ownership, independent toggles, cached UI reuse, snapshot and legacy defaults _landscape
+PASS: Failure, late completion, timer race, external disable, missing image and reuse
+PASS: Video preparation timeout
+PASS: Video playback stall watchdog
+PASS: Unknown-duration video watchdog
+PASS: Missing close reference and failed store launch
+PASS: Unscaled digit reels, rapid changes and completion message
+PASS: All checks completed.

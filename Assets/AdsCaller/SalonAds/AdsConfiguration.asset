@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f5bc2c0c6701843bd3b7d3922d6153, type: 3}
+  m_Name: AdsConfiguration
+  m_EditorClassIdentifier: 
+  canInitialize: 1
+  removeAdsPlayerPrefKey: RemoveAds
+  canShowBanner: 1
+  canShowLargeBanner: 1
+  canShowInterstitial: 1
+  canShowPopAd: 1
+  bannerCycleSpeed: 7
+  showBannerOnStart: 1
+  popAdCycleSpeed: 3
+  startPopAdCycleOnStart: 1
+  levelAdCycleSpeed: 5
+  startLevelAdCycleOnStart: 0
+  interstitialShowStoreArrowBeforeClose: 0
+  rewardedShowStoreArrowBeforeClose: 0
+  bannerSequence: 0
+  interstitialSequence: 0
+  largeBannerSequence: 0
+  popAdSequence: 0
+  rewardedSequence: 0
+  bannerPosition: 7
+  largeBannerPosition: 5
+  interstitialMediaType: 0
+  rewardedMediaType: 0
+  showEventFormat: show_{0}_{1}
+  clickEventFormat: click_{0}_{1}
+  showAdNotAvailablePopup: 0
+  adNotAvailablePopup: {fileID: 1480338630579183576, guid: 0a5fad4f067cd5c4ab5ab7d0ae1a8e34, type: 3}

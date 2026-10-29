@@ -1,0 +1,16 @@
+{
+  "Assets/AdsCaller/Scripts/Data/AdsConfiguration.cs": "Assets/AdsCaller/SalonAds/Scripts/Configuration/AdsConfiguration.cs",
+  "Assets/AdsCaller/Scripts/Others/BannerAnimator.cs": "Assets/AdsCaller/SalonAds/Scripts/Configuration/BannerAnimator.cs",
+  "Assets/AdsCaller/GSS-UPM-Guide.md": "Assets/AdsCaller/AdsCaller-UPM-Guide.md",
+  "Assets/AdsCaller/GSSAssetIndex.json": "Assets/AdsCaller/AdsCallerAssetIndex.json",
+  "Assets/AdsCaller/Scripts/GSS.AdsCaller.Core.asmdef": "Assets/AdsCaller/Scripts/AdsCaller.Core.asmdef",
+  "Assets/AdsCaller/Bootstrap/CrossPromo/GSS Ads Caller CrossPromo.prefab": "Assets/AdsCaller/Bootstrap/CrossPromo/Ads Caller CrossPromo.prefab",
+  "Assets/AdsCaller/SalonAds/Scripts/GSS.AdsCaller.CrossPromo.asmdef": "Assets/AdsCaller/SalonAds/Scripts/AdsCaller.CrossPromo.asmdef",
+  "Assets/AdsCaller/SalonAds/Scripts/Editor/GSS.AdsCaller.CrossPromo.Editor.asmdef": "Assets/AdsCaller/SalonAds/Scripts/Editor/AdsCaller.CrossPromo.Editor.asmdef",
+  "Assets/AdsCaller/SalonAds/Scripts/Editor/GSSCrossPromoSetup.cs": "Assets/AdsCaller/SalonAds/Scripts/Editor/AdsCallerCrossPromoSetup.cs",
+  "Assets/AdsCaller/Scripts/Editor/GSS.AdsCaller.Editor.asmdef": "Assets/AdsCaller/Scripts/Editor/AdsCaller.Editor.asmdef",
+  "Assets/AdsCaller/Scripts/Editor/GSSAdsAssets.cs": "Assets/AdsCaller/Scripts/Editor/AdsCallerAssets.cs",
+  "Assets/AdsCaller/Scripts/Editor/GSSAdsBootstrap.cs": "Assets/AdsCaller/Scripts/Editor/AdsCallerBootstrap.cs",
+  "Assets/MMPHandler/GSS.AdsCaller.Core.asmref": "Assets/MMPHandler/AdsCaller.Core.asmref",
+  "Assets/GSSValidation/Editor/GSSValidation.cs": "Assets/AdsCallerPackageValidation/Editor/AdsCallerPackageValidation.cs"
+}
