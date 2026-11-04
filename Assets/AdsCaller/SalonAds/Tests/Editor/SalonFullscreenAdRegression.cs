@@ -86,6 +86,7 @@ public static class SalonFullscreenAdRegression
                 yield return Rewarded(orientation, arrow);
             }
         }
+        yield return InterstitialLayout();
         yield return ConfigurationSwitching();
         yield return FailureAndReuse();
         yield return PlaybackWatchdogs();
@@ -172,6 +173,77 @@ public static class SalonFullscreenAdRegression
         Object.Destroy(go);
         Pass("Rewarded " + orientation + " arrow=" + arrow);
         yield return NextFrame();
+    }
+
+    private static IEnumerator InterstitialLayout()
+    {
+        foreach (string orientation in new[] { "", "_landscape" })
+        {
+            var go = Load("Interstitial" + orientation);
+            var ad = go.GetComponent<SalonInterstitialAd>();
+            var canvas = go.GetComponent<Canvas>();
+            var cameraObject = new GameObject("Layout validation camera", typeof(Camera));
+            var camera = cameraObject.GetComponent<Camera>();
+            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            canvas.worldCamera = camera;
+            canvas.planeDistance = 1f;
+            foreach (var size in new[] { new Vector2Int(600, 1200), new Vector2Int(1200, 600), new Vector2Int(800, 800) })
+            {
+                var target = new RenderTexture(size.x, size.y, 24);
+                camera.targetTexture = target;
+                foreach (var artSize in new[] { new Vector2Int(400, 200), new Vector2Int(200, 400) })
+                {
+                    var texture = new Texture2D(artSize.x, artSize.y);
+                    var art = Sprite.Create(texture, new Rect(0, 0, artSize.x, artSize.y), Vector2.one * 0.5f);
+                    go.SetActive(true);
+                    Canvas.ForceUpdateCanvases();
+                    ad.closeButtonDelay = 10f;
+                    // Emulate cached/previously authored UI with the original restricted rect.
+                    var rect = ad.image.rectTransform;
+                    rect.anchorMin = rect.anchorMax = Vector2.one * 0.5f;
+                    rect.sizeDelta = new Vector2(1440, 1920);
+                    ad.SetupImage(art);
+                    rect.ForceUpdateRectTransforms();
+                    var parent = (RectTransform)rect.parent;
+                    Require(Vector2.Distance(rect.rect.size, parent.rect.size) < 0.1f,
+                        "Image rect fills screen before first animation frame");
+                    Require(rect.anchoredPosition.y <= -parent.rect.height,
+                        "Fullscreen image starts below the screen");
+                    yield return Wait(0.85f);
+                    Canvas.ForceUpdateCanvases();
+                    Require(rect.anchoredPosition == Vector2.zero, "Image intro settles at screen center");
+                    var imageCorners = new Vector3[4];
+                    var canvasCorners = new Vector3[4];
+                    rect.GetWorldCorners(imageCorners);
+                    parent.GetWorldCorners(canvasCorners);
+                    for (int i = 0; i < 4; i++)
+                        Require(Vector3.Distance(imageCorners[i], canvasCorners[i]) < 0.01f,
+                            "Settled image rect covers every screen corner");
+                    var mesh = ad.image.canvasRenderer.GetMesh();
+                    var drawn = mesh.bounds.size;
+                    Require(drawn.x > 0 && drawn.y > 0 && Mathf.Abs(drawn.x / drawn.y - (float)artSize.x / artSize.y) < 0.01f,
+                        "Rendered artwork preserves its aspect ratio");
+                    Require(Mathf.Abs(drawn.x - rect.rect.width) < 0.1f || Mathf.Abs(drawn.y - rect.rect.height) < 0.1f,
+                        "Artwork expands to the available screen dimension");
+                    // Stretch anchors continue to track screen changes after the intro.
+                    camera.targetTexture = null;
+                    Canvas.ForceUpdateCanvases();
+                    Require(Vector2.Distance(rect.rect.size, parent.rect.size) < 0.1f,
+                        "Image rect follows subsequent screen resize");
+                    camera.targetTexture = target;
+                    go.SetActive(false);
+                    Object.Destroy(art);
+                    Object.Destroy(texture);
+                }
+                camera.targetTexture = null;
+                target.Release();
+                Object.Destroy(target);
+            }
+            Object.Destroy(go);
+            Object.Destroy(cameraObject);
+            Pass("Interstitial screen rect, pre-animation sizing, aspect fit, resize and reuse " + orientation);
+            yield return NextFrame();
+        }
     }
 
     private static IEnumerator ConfigurationSwitching()

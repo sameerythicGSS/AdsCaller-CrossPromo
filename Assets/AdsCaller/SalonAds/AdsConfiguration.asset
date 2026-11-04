@@ -18,6 +18,10 @@ MonoBehaviour:
   canShowLargeBanner: 1
   canShowInterstitial: 1
   canShowPopAd: 1
+  showAdNotAvailablePopup: 0
+  adNotAvailablePopup: {fileID: 1480338630579183576, guid: 0a5fad4f067cd5c4ab5ab7d0ae1a8e34, type: 3}
+  bannerStyle: 2
+  showBannerCloseButton: 0
   bannerCycleSpeed: 7
   showBannerOnStart: 1
   popAdCycleSpeed: 3
@@ -37,5 +41,3 @@ MonoBehaviour:
   rewardedMediaType: 0
   showEventFormat: show_{0}_{1}
   clickEventFormat: click_{0}_{1}
-  showAdNotAvailablePopup: 0
-  adNotAvailablePopup: {fileID: 1480338630579183576, guid: 0a5fad4f067cd5c4ab5ab7d0ae1a8e34, type: 3}

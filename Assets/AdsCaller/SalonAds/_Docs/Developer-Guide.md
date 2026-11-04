@@ -178,3 +178,8 @@ canonical metadata; the AdsCaller package exporter includes it automatically.
 On Windows, shared data lives at **%LOCALAPPDATA%/OutTools/BuildAutomator/settings.json**.
 It is not included in package exports. See the [Build Automator guide](../../../Editor/BuildAutomator/README.md) for migration,
 output precedence, connection setup, storage, and troubleshooting.
+## Pop Ad punch animation controls
+
+`NativeUIPunchScaler` on the Pop Ad prefab owns its animation independently of the ad provider and catalog flow. It runs on unscaled time, so gameplay pause does not freeze it. Hiding the object or disabling the component restores its authored scale; enabling it resumes the animation automatically.
+
+Call `popAd.GetComponent<NativeUIPunchScaler>().StopAnimation()` to stop and reset the pose, and `StartAnimation()` to resume. Both public methods can also be selected as UnityEvent listeners in the Inspector. An explicit stop persists across hide/show until start is called; starting while inactive schedules animation for the next enable. Repeated calls are safe. `IsAnimating` reports whether animation is requested on an active, enabled component with a live target. Stopping the provider's Pop Ad content cycle does not stop the punch animation.

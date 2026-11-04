@@ -444,89 +444,93 @@ public class CatalogLoader : MonoBehaviour
     /// Downloads images from URLs if they don't exist locally. Caches them to device storage 
     /// at runtime to prevent redundant downloads on future sessions.
     /// </summary>
+    // Bound every image request, including cached files. Failed images must not
+    // prevent the remaining images and remote catalog from becoming usable.
+    private const int ImageRequestTimeoutSeconds = 15;
+
     private async Awaitable LoadImagesAsync(string urls, List<Sprite> targetList, string gameName, string adForm)
     {
         if (string.IsNullOrEmpty(urls)) return;
-
         string[] split = urls.Split(',');
-
         for (int i = 0; i < split.Length; i++)
         {
             string url = split[i].Trim();
             if (string.IsNullOrEmpty(url)) continue;
 
             string fileName = $"Image_{i}.png";
-            try
+            if (Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
             {
-                Uri uri = new Uri(url);
                 string extractedName = Path.GetFileName(uri.LocalPath);
                 if (!string.IsNullOrEmpty(extractedName) && Path.HasExtension(extractedName))
-                {
                     fileName = $"{Path.GetFileNameWithoutExtension(extractedName)}_{i}{Path.GetExtension(extractedName)}";
-                }
             }
-            catch { }
 
-            // 1. Create a safe runtime path on the device's persistent data path
-            string safeGameName = string.Join("_", gameName.Split(Path.GetInvalidFileNameChars()));
-            string dirPath = Path.Combine(Application.persistentDataPath, "AdCache", safeGameName, adForm);
-            string filePath = Path.Combine(dirPath, fileName);
+            string filePath;
+            try
+            {
+                string safeGameName = string.Join("_", gameName.Split(Path.GetInvalidFileNameChars()));
+                filePath = Path.Combine(Application.persistentDataPath, "AdCache", safeGameName, adForm, fileName);
+            }
+            catch (Exception e)
+            {
+                Logger.Warn($"Cannot prepare image cache for {gameName}/{adForm}: {e.Message}");
+                continue;
+            }
 
-            // 2. CHECK LOCAL STORAGE FIRST (Differential Update Logic)
+            Texture2D texture = null;
             if (File.Exists(filePath))
             {
-                // File exists locally! Load it directly from the device to save bandwidth.
-                string localUri = new Uri(filePath).AbsoluteUri;
-                using (UnityWebRequest localRequest = UnityWebRequestTexture.GetTexture(localUri))
+                texture = await LoadImageTextureAsync(new Uri(filePath).AbsoluteUri);
+            }
+            if (texture == null)
+            {
+                texture = await LoadImageTextureAsync(url);
+                if (texture == null) continue;
+                try
                 {
-                    await localRequest.SendWebRequest();
-                    if (localRequest.result == UnityWebRequest.Result.Success)
-                    {
-                        Texture2D tex = DownloadHandlerTexture.GetContent(localRequest);
-                        if (tex != null)
-                        {
-                            Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-                            targetList.Add(sprite);
-                            continue; // Skip to the next image URL without hitting the internet
-                        }
-                    }
+                    Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                    File.WriteAllBytes(filePath, texture.EncodeToPNG());
                 }
-                // If local load fails for some reason (corruption), it will naturally fall through and re-download.
+                catch (Exception e)
+                {
+                    Logger.Warn($"Failed to save local texture cache to disk: {e.Message}");
+                }
             }
 
-            // 3. FETCH FROM INTERNET (Only happens if file is missing)
+            targetList.Add(Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
+        }
+    }
+
+    private async Awaitable<Texture2D> LoadImageTextureAsync(string url)
+    {
+        try
+        {
             using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
             {
+                request.timeout = ImageRequestTimeoutSeconds;
                 await request.SendWebRequest();
-
-                if (request.result == UnityWebRequest.Result.Success)
-                {
-                    Texture2D texture = DownloadHandlerTexture.GetContent(request);
-                    if (texture != null)
-                    {
-                        // 4. CACHE TO LOCAL STORAGE FOR NEXT SESSION
-                        try
-                        {
-                            if (!Directory.Exists(dirPath))
-                                Directory.CreateDirectory(dirPath);
-
-                            File.WriteAllBytes(filePath, texture.EncodeToPNG());
-                        }
-                        catch (Exception e)
-                        {
-                            Logger.Warn($"Failed to save local texture cache to disk: {e.Message}");
-                        }
-
-                        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                        targetList.Add(sprite);
-                    }
-                }
-                else
-                {
-                    Logger.Warn($"Failed to download sprite from URL: {url}");
-                }
+                return ReadImageTexture(request, url);
             }
         }
+        catch (Exception e)
+        {
+            // Awaiting a failed request can throw. Isolate that failure to this image.
+            Logger.Warn($"Image request failed ({url}): {e.Message}");
+            return null;
+        }
+    }
+
+    private static Texture2D ReadImageTexture(UnityWebRequest request, string url)
+    {
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Logger.Warn($"Image request failed ({url}): {request.result}, HTTP {request.responseCode}, {request.error}");
+            return null;
+        }
+        Texture2D texture = DownloadHandlerTexture.GetContent(request);
+        if (texture == null)
+            Logger.Warn($"Image request returned no decodable texture ({url}).");
+        return texture;
     }
 
     #endregion

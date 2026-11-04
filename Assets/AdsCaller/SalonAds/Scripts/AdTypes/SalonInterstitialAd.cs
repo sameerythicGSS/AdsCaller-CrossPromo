@@ -38,7 +38,6 @@ public class SalonInterstitialAd : MonoBehaviour
     private float _previousTimeScale;
     private float _previousAudioVolume;
     private CanvasGroup _canvasGroup;
-    private Vector2 _originalImagePos;
     private Vector2 _originalVideoPos;
     private CancellationTokenSource _presentationCts;
     private bool _videoFailed;
@@ -51,7 +50,6 @@ public class SalonInterstitialAd : MonoBehaviour
         _canvasGroup = GetComponent<CanvasGroup>();
         if (_canvasGroup == null) _canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
-        if (image != null) _originalImagePos = image.rectTransform.anchoredPosition;
         if (videoDisplay != null) _originalVideoPos = videoDisplay.rectTransform.anchoredPosition;
 
         if (button != null) button.onClick.AddListener(OnInterstitialClicked);
@@ -288,8 +286,20 @@ public class SalonInterstitialAd : MonoBehaviour
 
             bool showingImage = image != null && image.gameObject.activeSelf;
             RectTransform activeRect = showingImage ? image.rectTransform : (videoDisplay != null ? videoDisplay.rectTransform : null);
-            Vector2 targetPos = showingImage ? _originalImagePos : _originalVideoPos;
-            Vector2 startPos = targetPos + new Vector2(0f, -2000f);
+            if (showingImage)
+            {
+                // The image is a direct child of the fullscreen Canvas. Stretch in canvas
+                // units so CanvasScaler and screen aspect changes are handled automatically.
+                activeRect.anchorMin = Vector2.zero;
+                activeRect.anchorMax = Vector2.one;
+                activeRect.pivot = Vector2.one * 0.5f;
+                activeRect.sizeDelta = Vector2.zero;
+                image.preserveAspect = true;
+            }
+
+            Vector2 targetPos = showingImage ? Vector2.zero : _originalVideoPos;
+            float slideOffset = showingImage ? Mathf.Max(2000f, activeRect.rect.height) : 2000f;
+            Vector2 startPos = targetPos + new Vector2(0f, -slideOffset);
 
             if (activeRect != null) activeRect.anchoredPosition = startPos;
 

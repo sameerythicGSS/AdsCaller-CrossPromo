@@ -6,6 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AdsConfiguration", menuName = "Ads Caller/Cross Promo/Configuration")]
 public class AdsConfiguration : ScriptableObject
 {
+    public enum BannerStyle
+    {
+        Adaptive = 0,
+        FullWidth = 1,
+        Standard = 2,
+        Small = 3
+    }
+
     #region General
     [Header("General")]
     public bool canInitialize;
@@ -30,6 +38,10 @@ public class AdsConfiguration : ScriptableObject
 
     #region Ad Timings
     [Header("Banner Ads")]
+    [Tooltip("Adaptive: full canvas width with proportional height. Full Width: full canvas width, 193 high. Standard: 1283 x 193. Small: 960 x 150. Sizes use Canvas units and fit smaller screens.")]
+    public BannerStyle bannerStyle = BannerStyle.Standard;
+    [Tooltip("Show a close button on the banner. Clicking it hides the banner and raises SalonBannerAd.OnCloseButtonClicked.")]
+    public bool showBannerCloseButton = false;
     [Tooltip("(in seconds) How long a banner ad stays before showing other content")]
     public int bannerCycleSpeed = 7;
     public bool showBannerOnStart = true;

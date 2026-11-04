@@ -233,6 +233,7 @@ public class AdsCallerSalon : MonoBehaviour, IOutAdsProvider, IPositionedOutAdsP
         try
         {
             bannerAdUI = await uiFactory.CreateBannerAsync(transform);
+            if (bannerAdUI != null) bannerAdUI.Configure(config);
             if (bannerAdUI != null && bannerAdUI.snapContainer != null && config != null)
             {
                 SnapToPosition(bannerAdUI.snapContainer, config.bannerPosition);

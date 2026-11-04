@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class NativeUIPunchScaler : MonoBehaviour
@@ -14,53 +13,75 @@ public class NativeUIPunchScaler : MonoBehaviour
     [SerializeField] private float singlePunchDuration = 0.3f;
 
     private Vector3 originalScale;
+    private float cycleTime;
+    private bool initialized;
+    private bool animationRequested = true;
 
-    private void Start()
+    public bool IsAnimating => animationRequested && isActiveAndEnabled && targetRect != null;
+
+    private void Awake()
     {
+        InitializeTarget();
+    }
+
+    private bool InitializeTarget()
+    {
+        if (initialized) return targetRect != null;
         if (targetRect == null) targetRect = GetComponent<RectTransform>();
-
+        if (targetRect == null) return false;
         originalScale = targetRect.localScale;
-        StartCoroutine(PunchRoutine());
+        initialized = true;
+        return true;
     }
 
-    private IEnumerator PunchRoutine()
+    private void OnEnable()
     {
-        while (true)
-        {
-            // Wait for the 3-second delay
-            yield return new WaitForSeconds(delayBetweenPunches);
-
-            // Execute the punch twice
-            yield return StartCoroutine(DoSinglePunch());
-            yield return StartCoroutine(DoSinglePunch());
-        }
+        if (InitializeTarget()) ResetPose();
     }
 
-    private IEnumerator DoSinglePunch()
+    private void OnDisable()
     {
-        Vector3 targetScale = originalScale + new Vector3(maxScaleOffset, maxScaleOffset, maxScaleOffset);
-        float halfDuration = singlePunchDuration / 2f;
-        float elapsed = 0f;
+        if (initialized) ResetPose();
+    }
 
-        // Scale Up (The "Punch" Out)
-        while (elapsed < halfDuration)
+    /// <summary>Start/resume from scripts or UnityEvents, including while inactive.</summary>
+    public void StartAnimation()
+    {
+        if (animationRequested) return;
+        animationRequested = true;
+        if (InitializeTarget()) ResetPose();
+    }
+
+    /// <summary>Stop until explicitly started again; callable from scripts or UnityEvents.</summary>
+    public void StopAnimation()
+    {
+        animationRequested = false;
+        if (InitializeTarget()) ResetPose();
+    }
+
+    private void ResetPose()
+    {
+        cycleTime = 0f;
+        if (targetRect != null) targetRect.localScale = originalScale;
+    }
+
+    private void Update()
+    {
+        if (!animationRequested || targetRect == null) return;
+
+        // Presentation owns its clock: ad loading/cycling, coroutine cancellation and
+        // gameplay pause cannot terminate the animation. Disable only suspends it.
+        float delay = Mathf.Max(0f, delayBetweenPunches);
+        float duration = Mathf.Max(0.001f, singlePunchDuration);
+        float cycleDuration = delay + duration * 2f;
+        cycleTime = (cycleTime + Time.unscaledDeltaTime) % cycleDuration;
+        float punchTime = cycleTime - delay;
+        float amount = 0f;
+        if (punchTime >= 0f)
         {
-            elapsed += Time.deltaTime;
-            targetRect.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / halfDuration);
-            yield return null;
+            float phase = (punchTime % duration) / duration;
+            amount = 1f - Mathf.Abs(phase * 2f - 1f);
         }
-
-        elapsed = 0f;
-
-        // Scale Down (The Return)
-        while (elapsed < halfDuration)
-        {
-            elapsed += Time.deltaTime;
-            targetRect.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / halfDuration);
-            yield return null;
-        }
-
-        // Hard reset to original scale to prevent floating point inaccuracies over time
-        targetRect.localScale = originalScale;
+        targetRect.localScale = originalScale + Vector3.one * (maxScaleOffset * amount);
     }
 }
